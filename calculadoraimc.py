@@ -15,13 +15,13 @@ def calcular(peso,altura):
 def determinar(imc):
     if imc < 18.5:
         categoria = "abaixo do peso"
-    elif imc > 18.5 and imc < 24.9:
+    elif imc < 24.9:
         categoria = "peso normal"
-    if imc >25.9 and imc <29.9:
+    elif imc > 29.9:
         categoria = "sobrepeso"
     else: 
         categoria = "obesidade"
-    return determinar(imc)
+    return categoria
 
 
 peso = float(input("digite seu peso: "))
@@ -30,8 +30,7 @@ imc = calcular (peso,altura)
 
 
 print ("seu imc é: ", imc)
-print ("sua categoria é", determinar(imc))
-
+print ("sua categoria é:", determinar(imc))
 
 
 
